@@ -6,31 +6,31 @@ export const DocumentarySection: React.FC = () => {
   const { production, documentary } = contentConfig;
 
   return (
-    <SectionContainer id="produccion" className="py-24 sm:py-32 border-t border-white/5 relative">
+    <SectionContainer id="produccion" className="py-24 sm:py-32 border-t border-black/5 relative">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
         {/* Card 1: Detrás de la Producción */}
-        <div className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col justify-between gap-8 group">
+        <div className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col justify-between gap-8 group shadow-md">
           <div className="flex flex-col gap-4">
             <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[var(--color-accent-gold)] font-mono font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)]" />
               {production.label}
             </div>
-            <h3 className="font-serif-editorial text-3xl sm:text-4xl font-normal text-white leading-tight">
+            <h3 className="font-serif-editorial text-3xl sm:text-4xl font-normal text-slate-900 leading-tight">
               {production.title}
             </h3>
-            <p className="text-base sm:text-lg text-[var(--color-text-muted)] font-light leading-relaxed mt-2">
+            <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed mt-2">
               {production.description}
             </p>
           </div>
 
-          <div className="pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[var(--color-text-muted)]">
+          <div className="pt-6 border-t border-black/5 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-slate-600">
             <span>PROCESO CREATIVO & ARREGLOS</span>
-            <span className="text-[var(--color-accent-gold)]">SFORZATO</span>
+            <span className="text-[var(--color-accent-gold)] font-semibold">SFORZATO</span>
           </div>
         </div>
 
         {/* Card 2: Documental Audiovisual */}
-        <div id="documental" className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col justify-between gap-8 relative overflow-hidden group border-[var(--color-accent-gold)]/30">
+        <div id="documental" className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col justify-between gap-8 relative overflow-hidden group border-[var(--color-accent-gold)]/40 shadow-md">
           <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-[var(--color-accent-gold)]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="flex flex-col gap-4 relative z-10">
@@ -38,16 +38,16 @@ export const DocumentarySection: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
               {documentary.subtitle}
             </div>
-            <h3 className="font-serif-editorial text-3xl sm:text-4xl font-normal text-white leading-tight">
+            <h3 className="font-serif-editorial text-3xl sm:text-4xl font-normal text-slate-900 leading-tight">
               {documentary.title}
             </h3>
-            <p className="text-base sm:text-lg text-[var(--color-text-muted)] font-light leading-relaxed mt-2">
+            <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed mt-2">
               {documentary.description}
             </p>
           </div>
 
-          <div className="pt-6 border-t border-white/10 flex items-center justify-between relative z-10 text-xs font-mono uppercase tracking-widest">
-            <span className="text-[var(--color-text-muted)]">REGISTRO EN VIDEO</span>
+          <div className="pt-6 border-t border-black/5 flex items-center justify-between relative z-10 text-xs font-mono uppercase tracking-widest">
+            <span className="text-slate-600">REGISTRO EN VIDEO</span>
             <span className="text-[var(--color-accent-gold)] font-bold bg-[var(--color-accent-gold)]/10 px-3 py-1 rounded-full border border-[var(--color-accent-gold)]/30">
               PRÓXIMAMENTE
             </span>

@@ -25,13 +25,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59F38] text-[#050811] shadow-[0_0_25px_rgba(229,192,88,0.25)] hover:shadow-[0_0_35px_rgba(229,192,88,0.45)] hover:brightness-105 border border-[#FFF4D0]/50 font-bold',
+      'bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#996515] text-white shadow-[0_4px_20px_rgba(184,134,11,0.30)] hover:shadow-[0_6px_25px_rgba(184,134,11,0.45)] hover:brightness-105 border border-[#F3E5AB]/40 font-bold',
     secondary:
-      'bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 backdrop-blur-md',
+      'bg-white/80 hover:bg-white text-[#0F172A] border border-black/10 hover:border-black/20 backdrop-blur-md shadow-sm',
     outline:
-      'border border-[var(--color-accent-gold)] text-[var(--color-accent-gold)] hover:bg-[var(--color-accent-gold)] hover:text-[#050811]',
+      'border-2 border-[var(--color-accent-gold)] text-[var(--color-accent-gold)] hover:bg-[var(--color-accent-gold)] hover:text-white',
     glass:
-      'bg-[var(--color-accent-gold)]/10 hover:bg-[var(--color-accent-gold)]/20 text-[var(--color-accent-gold)] border border-[var(--color-accent-gold)]/30 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]',
+      'bg-white/80 hover:bg-white text-[var(--color-accent-gold)] border border-[var(--color-accent-gold)]/40 backdrop-blur-md shadow-sm',
   };
 
   const widthStyle = fullWidth ? 'w-full' : '';

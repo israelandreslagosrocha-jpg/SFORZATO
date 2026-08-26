@@ -11,14 +11,14 @@ export const SocialSection: React.FC = () => {
   const hasConfirmedUrls = socialsConfig.channels.some((channel) => channel.url !== null);
 
   return (
-    <SectionContainer id="social" className="py-16 border-t border-white/5 relative">
-      <div className="flex flex-col items-center text-center gap-4 max-w-xl mx-auto glass-panel rounded-3xl p-8 border-white/5">
+    <SectionContainer id="social" className="py-16 border-t border-black/5 relative">
+      <div className="flex flex-col items-center text-center gap-4 max-w-xl mx-auto glass-panel rounded-3xl p-8 border-black/5 shadow-xs">
         <span className="text-[10px] uppercase tracking-[0.25em] text-[var(--color-accent-gold)] font-semibold font-mono">
           CANALES OFICIALES DE SFORZATO MUSIC
         </span>
 
         {hasConfirmedUrls ? (
-          <div className="flex items-center justify-center gap-8 text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
+          <div className="flex items-center justify-center gap-8 text-xs uppercase tracking-widest text-slate-600">
             {socialsConfig.channels.map((channel) =>
               channel.url ? (
                 <a
@@ -27,7 +27,7 @@ export const SocialSection: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={channel.ariaLabel}
-                  className="hover:text-white transition-colors py-1"
+                  className="hover:text-slate-900 transition-colors py-1"
                 >
                   {channel.platform}
                 </a>
@@ -35,7 +35,7 @@ export const SocialSection: React.FC = () => {
             )}
           </div>
         ) : (
-          <p className="text-sm font-light leading-relaxed text-[var(--color-text-muted)]">
+          <p className="text-sm font-light leading-relaxed text-slate-600">
             Muy pronto podrás seguir las novedades de En Tu Memoria en Instagram y YouTube.
           </p>
         )}

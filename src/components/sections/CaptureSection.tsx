@@ -30,9 +30,9 @@ export const CaptureSection: React.FC = () => {
   };
 
   return (
-    <SectionContainer id="lanzamiento" className="py-24 sm:py-36 border-t border-white/5 relative">
+    <SectionContainer id="lanzamiento" className="py-24 sm:py-36 border-t border-black/5 relative">
       {/* Luz Central de Conversión */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(229,192,88,0.1)_0%,transparent_70%)] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(218,165,32,0.12)_0%,transparent_70%)] pointer-events-none z-0" />
 
       <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-8 relative z-10">
         <SectionHeader
@@ -42,7 +42,7 @@ export const CaptureSection: React.FC = () => {
           align="center"
         />
 
-        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border-[var(--color-accent-gold)]/25">
+        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-xl border-[var(--color-accent-gold)]/35 bg-white/95">
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
             <div className="relative flex-1">
               <input
@@ -53,7 +53,7 @@ export const CaptureSection: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 aria-label="Correo electrónico para notificaciones de lanzamiento"
-                className="w-full px-5 py-4 rounded-full bg-white/5 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:border-[var(--color-accent-gold)] focus:ring-2 focus:ring-[var(--color-accent-gold)]/20 transition-all text-sm font-light shadow-inner"
+                className="w-full px-5 py-4 rounded-full bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--color-accent-gold)] focus:ring-2 focus:ring-[var(--color-accent-gold)]/20 transition-all text-sm font-normal shadow-inner"
               />
             </div>
             <Button type="submit" variant="primary" size="lg" className="whitespace-nowrap">
@@ -62,12 +62,12 @@ export const CaptureSection: React.FC = () => {
           </form>
 
           {statusMessage && (
-            <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-4 font-mono">
+            <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-4 font-mono font-semibold">
               {statusMessage}
             </p>
           )}
 
-          <p className="text-[11px] text-[var(--color-text-dim)] uppercase tracking-widest mt-6 font-mono">
+          <p className="text-[11px] text-slate-500 uppercase tracking-widest mt-6 font-mono">
             Te notificaremos exclusivamente cuando el álbum y documental estén disponibles.
           </p>
         </div>

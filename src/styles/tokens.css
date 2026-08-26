@@ -1,31 +1,31 @@
 :root {
-  /* Color Palette - Obsidian, Velvet Studio & Luminous Gold */
-  --color-bg-obsidian: #050811;
-  --color-bg-studio: #080D18;
-  --color-bg-card: rgba(255, 255, 255, 0.025);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.045);
-  --color-bg-glass: rgba(11, 19, 36, 0.65);
+  /* Color Palette - Luminous Alabaster, Warm Ivory & Deep Warm Gold */
+  --color-bg-base: #FBF9F5;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-card: rgba(255, 255, 255, 0.85);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.98);
+  --color-bg-glass: rgba(255, 255, 255, 0.88);
   
-  --color-accent-gold: #E5C058;
-  --color-accent-gold-dark: #C59F38;
-  --color-accent-gold-muted: rgba(229, 192, 88, 0.2);
-  --color-accent-gold-glow: rgba(229, 192, 88, 0.12);
+  --color-accent-gold: #B8860B;
+  --color-accent-gold-light: #C59F38;
+  --color-accent-gold-muted: rgba(184, 134, 11, 0.15);
+  --color-accent-gold-glow: rgba(184, 134, 11, 0.20);
   
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-border-gold: rgba(229, 192, 88, 0.22);
-  --color-border-gold-hover: rgba(229, 192, 88, 0.45);
+  --color-border-subtle: rgba(15, 23, 42, 0.08);
+  --color-border-gold: rgba(184, 134, 11, 0.25);
+  --color-border-gold-hover: rgba(184, 134, 11, 0.50);
   
-  --color-text-primary: #FFFFFF;
-  --color-text-cream: #F8F6F0;
-  --color-text-muted: #94A3B8;
-  --color-text-dim: #64748B;
+  --color-text-primary: #0F172A;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+  --color-text-dim: #94A3B8;
   
-  /* Legacy token mapping for backward compatibility */
-  --color-brand-navy: #050811;
-  --color-brand-navy-hero: #080D18;
-  --color-brand-cream: #0B1324;
-  --color-text-white: #FFFFFF;
-  --color-text-dark: #F8F6F0;
+  /* Legacy token mapping */
+  --color-brand-navy: #FBF9F5;
+  --color-brand-navy-hero: #FBF9F5;
+  --color-brand-cream: #F5F1E8;
+  --color-text-white: #0F172A;
+  --color-text-dark: #0F172A;
   
   /* Typography */
   --font-serif: 'Prata', Georgia, serif;
