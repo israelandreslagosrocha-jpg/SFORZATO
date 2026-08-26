@@ -16,38 +16,31 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   subtitle,
   description,
   align = 'left',
-  theme = 'dark',
   className = '',
 }) => {
-  const alignmentClass = align === 'center' ? 'text-center items-center' : 'text-left items-start';
-  const labelColor =
-    theme === 'dark' ? 'text-[var(--color-accent-gold)]' : 'text-[var(--color-text-dark)]/70';
-  const titleColor =
-    theme === 'dark' ? 'text-[var(--color-text-white)]' : 'text-[var(--color-text-dark)]';
-  const descColor =
-    theme === 'dark' ? 'text-[var(--color-text-muted)]' : 'text-[var(--color-text-dark)]/85';
+  const isCenter = align === 'center';
+  const alignmentClass = isCenter ? 'text-center items-center mx-auto' : 'text-left items-start';
 
   return (
-    <div className={`flex flex-col gap-2.5 ${alignmentClass} ${className}`}>
+    <div className={`flex flex-col gap-3 max-w-3xl ${alignmentClass} ${className}`}>
       {label && (
-        <span
-          className={`text-xs font-semibold tracking-[0.2em] uppercase ${labelColor}`}
-        >
-          {label}
-        </span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--color-accent-gold)]/10 border border-[var(--color-accent-gold)]/20 shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)] animate-pulse" />
+          <span className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[var(--color-accent-gold)]">
+            {label}
+          </span>
+        </div>
       )}
-      <h2
-        className={`font-serif-editorial text-3xl md:text-5xl font-normal leading-[1.15] ${titleColor}`}
-      >
+      <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] text-white tracking-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-xs md:text-sm tracking-[0.15em] uppercase font-medium mt-1 ${descColor}`}>
+        <p className="text-xs sm:text-sm tracking-[0.2em] uppercase font-medium text-[var(--color-accent-gold)]/90 mt-0.5">
           {subtitle}
         </p>
       )}
       {description && (
-        <p className={`text-base md:text-lg leading-relaxed mt-2 max-w-2xl ${descColor}`}>
+        <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-[var(--color-text-muted)] mt-2">
           {description}
         </p>
       )}

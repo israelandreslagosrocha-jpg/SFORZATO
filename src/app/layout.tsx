@@ -34,11 +34,20 @@ export const metadata: Metadata = {
     url: seoConfig.canonicalBase || 'https://sforzatomusic.cl',
     locale: 'es_CL',
     type: 'website',
+    images: [
+      {
+        url: brandConfig.ogProvisionalAsset.path,
+        width: brandConfig.ogProvisionalAsset.width,
+        height: brandConfig.ogProvisionalAsset.height,
+        alt: brandConfig.ogProvisionalAsset.alt,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: seoConfig.ogTitle,
     description: seoConfig.ogDescription,
+    images: [brandConfig.ogProvisionalAsset.path],
   },
 };
 

@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { SectionContainer } from '@/components/layout/SectionContainer';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { contentConfig } from '@/config/content';
 
@@ -19,46 +18,59 @@ export const CaptureSection: React.FC = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!sanitizedEmail || !emailRegex.test(sanitizedEmail)) {
-      setStatusMessage('Por favor ingresa un correo electrónico válido.');
+      setStatusMessage('Por favor ingresa un formato de correo electrónico válido.');
       return;
     }
 
-    // Interfaz visual client-side (Sin backend/almacenamiento de PII en esta fase)
-    setStatusMessage('¡Gracias por tu interés! Te notificaremos el día del estreno.');
+    // Respuesta honesta y transparente de preproducción
+    setStatusMessage(
+      'El registro oficial de notificaciones se habilitará con la campaña de lanzamiento. ¡Gracias por acompañar a Sforzato Music!'
+    );
     setEmail('');
   };
 
   return (
-    <SectionContainer id="lanzamiento" theme="navy" className="py-20 md:py-28 border-t border-white/10">
-      <div className="flex flex-col items-center text-center gap-6 max-w-2xl mx-auto">
+    <SectionContainer id="lanzamiento" className="py-24 sm:py-36 border-t border-white/5 relative">
+      {/* Luz Central de Conversión */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(229,192,88,0.1)_0%,transparent_70%)] pointer-events-none z-0" />
+
+      <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-8 relative z-10">
         <SectionHeader
           label={capture.label}
           title={capture.title}
           description={capture.description}
           align="center"
-          theme="dark"
         />
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full max-w-md mt-4">
-          <Input
-            type="email"
-            name="email"
-            placeholder={capture.inputPlaceholder}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            aria-label="Correo electrónico para notificaciones de lanzamiento"
-          />
-          <Button type="submit" variant="primary" className="whitespace-nowrap">
-            Notificarme el lanzamiento
-          </Button>
-        </form>
+        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border-[var(--color-accent-gold)]/25">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
+            <div className="relative flex-1">
+              <input
+                type="email"
+                name="email"
+                placeholder={capture.inputPlaceholder}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-label="Correo electrónico para notificaciones de lanzamiento"
+                className="w-full px-5 py-4 rounded-full bg-white/5 border border-white/15 text-white placeholder-white/40 focus:outline-none focus:border-[var(--color-accent-gold)] focus:ring-2 focus:ring-[var(--color-accent-gold)]/20 transition-all text-sm font-light shadow-inner"
+              />
+            </div>
+            <Button type="submit" variant="primary" size="lg" className="whitespace-nowrap">
+              Notificarme el lanzamiento
+            </Button>
+          </form>
 
-        {statusMessage && (
-          <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-2">
-            {statusMessage}
+          {statusMessage && (
+            <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-4 font-mono">
+              {statusMessage}
+            </p>
+          )}
+
+          <p className="text-[11px] text-[var(--color-text-dim)] uppercase tracking-widest mt-6 font-mono">
+            Te notificaremos exclusivamente cuando el álbum y documental estén disponibles.
           </p>
-        )}
+        </div>
       </div>
     </SectionContainer>
   );

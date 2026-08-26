@@ -25,6 +25,14 @@ export const brandConfig: BrandConfig = {
     isProvisional: true,
     status: 'CONFIRMADO',
   },
+  ogProvisionalAsset: {
+    path: '/assets/brand/og-image-provisional-ai.webp', // Asset social preview provisional 1200x630 (50.20 KB)
+    alt: 'Sforzato Music — En Tu Memoria (Social Preview Provisional)',
+    width: 1200,
+    height: 630,
+    isProvisional: true,
+    status: 'CONFIRMADO',
+  },
   biblicalConcept: {
     reference: 'Lucas 22:19',
     verseText: 'Hagan esto en memoria de mí',

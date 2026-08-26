@@ -1,40 +1,54 @@
 import React from 'react';
 import { SectionContainer } from '@/components/layout/SectionContainer';
-import { SectionHeader } from '@/components/ui/SectionHeader';
 import { contentConfig } from '@/config/content';
 
 export const DocumentarySection: React.FC = () => {
   const { production, documentary } = contentConfig;
 
   return (
-    <SectionContainer id="produccion" theme="navy" className="py-20 md:py-28 border-t border-white/10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto items-stretch">
-        {/* Production Philosophy */}
-        <div className="flex flex-col justify-between gap-6 p-8 border border-white/10 bg-white/[0.02] rounded.subtle">
-          <SectionHeader
-            label={production.label}
-            title={production.title}
-            description={production.description}
-            theme="dark"
-          />
-          <div className="text-xs uppercase tracking-widest text-[var(--color-text-muted)] font-mono pt-4 border-t border-white/10">
-            PROCESO CREATIVO & ARREGLOS
+    <SectionContainer id="produccion" className="py-24 sm:py-32 border-t border-white/5 relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+        {/* Card 1: Detrás de la Producción */}
+        <div className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col justify-between gap-8 group">
+          <div className="flex flex-col gap-4">
+            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[var(--color-accent-gold)] font-mono font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)]" />
+              {production.label}
+            </div>
+            <h3 className="font-serif-editorial text-3xl sm:text-4xl font-normal text-white leading-tight">
+              {production.title}
+            </h3>
+            <p className="text-base sm:text-lg text-[var(--color-text-muted)] font-light leading-relaxed mt-2">
+              {production.description}
+            </p>
+          </div>
+
+          <div className="pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[var(--color-text-muted)]">
+            <span>PROCESO CREATIVO & ARREGLOS</span>
+            <span className="text-[var(--color-accent-gold)]">SFORZATO</span>
           </div>
         </div>
 
-        {/* Documentary Teaser */}
-        <div id="documental" className="flex flex-col justify-between gap-6 p-8 border border-[var(--color-border-gold)] bg-white/5 rounded.subtle">
-          <SectionHeader
-            label={documentary.subtitle}
-            title={documentary.title}
-            description={documentary.description}
-            theme="dark"
-          />
-          <div className="flex items-center justify-between pt-4 border-t border-white/10">
-            <span className="text-xs uppercase tracking-widest text-[var(--color-accent-gold)] font-semibold">
-              REGISTRO AUDIOVISUAL
-            </span>
-            <span className="text-xs uppercase tracking-widest text-[var(--color-accent-gold)] font-bold">
+        {/* Card 2: Documental Audiovisual */}
+        <div id="documental" className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col justify-between gap-8 relative overflow-hidden group border-[var(--color-accent-gold)]/30">
+          <div className="absolute -right-20 -bottom-20 w-60 h-60 bg-[var(--color-accent-gold)]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="flex flex-col gap-4 relative z-10">
+            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[var(--color-accent-gold)] font-mono font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+              {documentary.subtitle}
+            </div>
+            <h3 className="font-serif-editorial text-3xl sm:text-4xl font-normal text-white leading-tight">
+              {documentary.title}
+            </h3>
+            <p className="text-base sm:text-lg text-[var(--color-text-muted)] font-light leading-relaxed mt-2">
+              {documentary.description}
+            </p>
+          </div>
+
+          <div className="pt-6 border-t border-white/10 flex items-center justify-between relative z-10 text-xs font-mono uppercase tracking-widest">
+            <span className="text-[var(--color-text-muted)]">REGISTRO EN VIDEO</span>
+            <span className="text-[var(--color-accent-gold)] font-bold bg-[var(--color-accent-gold)]/10 px-3 py-1 rounded-full border border-[var(--color-accent-gold)]/30">
               PRÓXIMAMENTE
             </span>
           </div>

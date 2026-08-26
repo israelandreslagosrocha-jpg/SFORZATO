@@ -29,6 +29,14 @@ export interface BrandConfig {
     isProvisional: boolean;
     status: ContentStatus;
   };
+  ogProvisionalAsset: {
+    path: string;
+    alt: string;
+    width: number;
+    height: number;
+    isProvisional: boolean;
+    status: ContentStatus;
+  };
   biblicalConcept: {
     reference: string;
     verseText: string;
