@@ -1,0 +1,61 @@
+/**
+ * DESIGN TOKENS & VISUAL SYSTEM — SFORZATO MUSIC "EN TU MEMORIA"
+ * Basado en docs/DESIGN_DNA.md (Fase 4 - Implementación Visual)
+ */
+
+:root {
+  /* Colors - Brand & Palette */
+  --color-brand-navy:       hsl(218, 52%, 8%);   /* #0A111E */
+  --color-brand-navy-hero:  hsl(218, 42%, 9%);   /* #0D1420 */
+  --color-brand-cream:      hsl(40, 25%, 94%);   /* #F4F1EA */
+
+  /* Colors - Accent */
+  --color-accent-gold:      hsl(42, 58%, 53%);   /* #D4AF37 - Exclusivo sobre Navy */
+  --color-accent-gold-hover:hsl(40, 52%, 46%);   /* #C59B4E */
+  --color-accent-gold-subtle: rgba(212, 175, 55, 0.15);
+
+  /* Colors - UI & Text */
+  --color-text-white:       hsl(0, 0%, 100%);    /* #FFFFFF - Texto sobre Navy (18.9:1) */
+  --color-text-muted:       hsl(218, 15%, 65%);   /* #8E9AAF - Metadatos sobre Navy (6.65:1) */
+  --color-text-dark:        hsl(218, 31%, 15%);   /* #1A2332 - Texto sobre Crema (13.99:1) */
+  --color-border-dark:      hsl(218, 20%, 20%);
+  --color-border-gold:      rgba(212, 175, 55, 0.3);
+
+  /* Typography Candidates (PRUEBA VISUAL EN FASE 4) */
+  --font-family-title-prata:     'Prata', Georgia, 'Times New Roman', serif;
+  --font-family-title-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-family-title-cinzel:    'Cinzel', Georgia, serif;
+  
+  /* Candidato Principal Recomendado tras prueba visual (Prata: Equilibrio editorial/musical) */
+  --font-family-title:           var(--font-family-title-prata);
+  --font-family-body:            'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Font Sizes - Scale */
+  --font-size-xs:   0.75rem;   /* 12px */
+  --font-size-sm:   0.875rem;  /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg:   1.25rem;   /* 20px */
+  --font-size-xl:   1.75rem;   /* 28px */
+  --font-size-2xl:  2.5rem;    /* 40px */
+  --font-size-3xl:  3.75rem;   /* 60px */
+
+  /* Spacing Scale (8px Grid) */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs:  12px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  32px;
+  --space-xl:  48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 128px;
+
+  /* Container Widths */
+  --container-max-width: 1200px;
+
+  /* Radius & Transitions */
+  --radius-subtle: 2px;
+  --transition-fast: 200ms ease;
+  --transition-normal: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
