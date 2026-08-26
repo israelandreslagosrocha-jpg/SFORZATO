@@ -22,25 +22,28 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const alignmentClass = isCenter ? 'text-center items-center mx-auto' : 'text-left items-start';
 
   return (
-    <div className={`flex flex-col gap-3 max-w-3xl ${alignmentClass} ${className}`}>
+    <div className={`flex flex-col gap-4 sm:gap-5 max-w-3xl ${alignmentClass} ${className}`}>
       {label && (
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--color-accent-gold)]/10 border border-[var(--color-accent-gold)]/30 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)] animate-pulse" />
-          <span className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[var(--color-accent-gold)]">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-[#8C5E0A]/30 shadow-xs mb-1">
+          <span className="w-2 h-2 rounded-full bg-[#8C5E0A]" />
+          <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] uppercase text-[#8C5E0A]">
             {label}
           </span>
         </div>
       )}
-      <h2 className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] text-slate-900 tracking-tight">
+      <h2
+        className="font-serif-editorial text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-slate-900 tracking-normal"
+        style={{ lineHeight: '1.25' }}
+      >
         {title}
       </h2>
       {subtitle && (
-        <p className="text-xs sm:text-sm tracking-[0.2em] uppercase font-medium text-[var(--color-accent-gold)] mt-0.5">
+        <p className="text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#8C5E0A] mt-1">
           {subtitle}
         </p>
       )}
       {description && (
-        <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-slate-600 mt-2">
+        <p className="text-base sm:text-lg md:text-xl font-normal leading-relaxed text-slate-700 mt-2">
           {description}
         </p>
       )}

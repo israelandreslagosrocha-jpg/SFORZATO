@@ -30,11 +30,11 @@ export const CaptureSection: React.FC = () => {
   };
 
   return (
-    <SectionContainer id="lanzamiento" className="py-24 sm:py-36 border-t border-black/5 relative">
+    <SectionContainer id="lanzamiento" className="py-28 sm:py-40 border-t border-slate-200/60 relative">
       {/* Luz Central de Conversión */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(218,165,32,0.12)_0%,transparent_70%)] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(218,165,32,0.14)_0%,transparent_70%)] pointer-events-none z-0" />
 
-      <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-8 relative z-10">
+      <div className="max-w-2xl mx-auto flex flex-col items-center text-center gap-10 relative z-10">
         <SectionHeader
           label={capture.label}
           title={capture.title}
@@ -42,8 +42,8 @@ export const CaptureSection: React.FC = () => {
           align="center"
         />
 
-        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-xl border-[var(--color-accent-gold)]/40 bg-white">
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
+        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border-2 border-[#8C5E0A]/35 bg-white">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3.5 w-full">
             <div className="relative flex-1">
               <input
                 type="email"
@@ -53,7 +53,7 @@ export const CaptureSection: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 aria-label="Correo electrónico para notificaciones de lanzamiento"
-                className="w-full px-5 py-4 rounded-full bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-[var(--color-accent-gold)] focus:ring-2 focus:ring-[var(--color-accent-gold)]/30 transition-all text-sm font-medium shadow-inner"
+                className="w-full px-5 py-4 rounded-full bg-slate-50 border-2 border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-[#8C5E0A] focus:ring-2 focus:ring-[#8C5E0A]/30 transition-all text-sm font-medium shadow-inner"
               />
             </div>
             <Button type="submit" variant="primary" size="lg" className="whitespace-nowrap">
@@ -62,7 +62,7 @@ export const CaptureSection: React.FC = () => {
           </form>
 
           {statusMessage && (
-            <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-4 font-mono font-bold">
+            <p role="status" className="text-xs tracking-wider text-[#8C5E0A] mt-5 font-mono font-bold">
               {statusMessage}
             </p>
           )}
