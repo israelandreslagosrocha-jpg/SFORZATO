@@ -18,31 +18,31 @@ export const HeroSection: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column: Monumental Editorial Narrative */}
         <div className="lg:col-span-7 flex flex-col gap-6 text-left">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--color-accent-gold)]/10 border border-[var(--color-accent-gold)]/30 backdrop-blur-md w-fit shadow-sm">
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--color-accent-gold)]/10 border border-[var(--color-accent-gold)]/30 backdrop-blur-md w-fit shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[var(--color-accent-gold)] animate-ping" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-[var(--color-accent-gold)]">
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase text-[var(--color-accent-gold)]">
               {hero.label}
             </span>
           </div>
 
           <h1 className="font-serif-editorial text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.02] tracking-tight text-slate-900">
             EN TU <br className="hidden sm:inline" />
-            <span className="text-gold-shine italic font-light">MEMORIA</span>
+            <span className="text-gold-shine italic font-normal">MEMORIA</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg tracking-[0.16em] uppercase font-medium text-slate-800 max-w-xl leading-snug">
+          <p className="text-sm sm:text-base md:text-lg tracking-[0.14em] uppercase font-semibold text-slate-800 max-w-xl leading-snug">
             {hero.subtitle}
           </p>
 
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-600 max-w-xl font-light">
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-700 max-w-xl font-light">
             {hero.description}
           </p>
 
           {/* Cita Bíblica (Lucas 22:19) con Acento Lumínico */}
-          <div className="relative p-5 rounded-2xl bg-white border border-black/5 border-l-4 border-l-[var(--color-accent-gold)] shadow-sm max-w-lg my-1">
-            <p className="text-xs sm:text-sm italic text-slate-800 font-light leading-relaxed">
+          <div className="relative p-5 rounded-2xl bg-white border border-black/10 border-l-4 border-l-[var(--color-accent-gold)] shadow-sm max-w-lg my-1">
+            <p className="text-sm italic text-slate-800 font-normal leading-relaxed">
               &ldquo;{brandConfig.biblicalConcept.verseText}&rdquo; &mdash;{' '}
-              <span className="font-semibold text-[var(--color-accent-gold)]">
+              <span className="font-bold text-[var(--color-accent-gold)]">
                 {brandConfig.biblicalConcept.reference}
               </span>
             </p>
@@ -55,7 +55,7 @@ export const HeroSection: React.FC = () => {
                 Notificarme el lanzamiento
               </Button>
             </a>
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[var(--color-accent-gold)] font-medium">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[var(--color-accent-gold)] font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-gold)]" />
               <span>{hero.releaseNotice}</span>
             </div>
@@ -72,14 +72,14 @@ export const HeroSection: React.FC = () => {
                 alt={heroProvisionalAsset.alt}
                 width={800}
                 height={800}
-                className="w-full h-full object-cover opacity-20 scale-105 group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover opacity-15 scale-105 group-hover:scale-110 transition-transform duration-700"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
             </div>
 
             {/* Header del Arte */}
-            <div className="relative z-10 flex items-center justify-between border-b border-black/5 pb-4">
+            <div className="relative z-10 flex items-center justify-between border-b border-black/10 pb-4">
               <div className="flex items-center gap-2">
                 <div className="flex items-end gap-1 h-3.5">
                   <span className="w-0.5 bg-[var(--color-accent-gold)] rounded-full animate-wave-1" />
@@ -87,34 +87,34 @@ export const HeroSection: React.FC = () => {
                   <span className="w-0.5 bg-[var(--color-accent-gold)] rounded-full animate-wave-3" />
                   <span className="w-0.5 bg-[var(--color-accent-gold)] rounded-full animate-wave-4" />
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-accent-gold)] font-semibold font-mono">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-accent-gold)] font-bold font-mono">
                   SFORZATO STUDIOS
                 </span>
               </div>
-              <span className="text-[10px] font-mono tracking-widest text-slate-600 bg-white px-2 py-0.5 rounded-full border border-black/5 shadow-xs">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-slate-800 bg-slate-100 px-2.5 py-0.5 rounded-full border border-black/10">
                 2026
               </span>
             </div>
 
             {/* Centro: Sello Tipográfico de Prestigio */}
             <div className="relative z-10 my-auto text-center flex flex-col items-center gap-3 py-6">
-              <div className="w-10 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-accent-gold)] to-transparent" />
-              <span className="text-xs uppercase tracking-[0.3em] text-slate-600 font-medium">
+              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-accent-gold)] to-transparent" />
+              <span className="text-xs uppercase tracking-[0.3em] text-slate-700 font-semibold">
                 {brandConfig.name}
               </span>
               <span className="font-serif-editorial text-4xl sm:text-5xl text-slate-900 font-normal leading-tight tracking-tight">
                 EN TU MEMORIA
               </span>
-              <p className="text-xs italic text-slate-600 max-w-xs font-light">
+              <p className="text-xs italic text-slate-700 max-w-xs font-normal">
                 Homenaje al legado y fe de {brandConfig.homage.personName}
               </p>
-              <div className="w-10 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-accent-gold)] to-transparent" />
+              <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-accent-gold)] to-transparent" />
             </div>
 
             {/* Footer de Ficha de Producción */}
-            <div className="relative z-10 pt-4 border-t border-black/5 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-600">
+            <div className="relative z-10 pt-4 border-t border-black/10 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-800 font-bold">
               <span>10 CANCIONES</span>
-              <span className="text-[var(--color-accent-gold)] font-semibold">EDICIÓN ESPECIAL</span>
+              <span className="text-[var(--color-accent-gold)]">EDICIÓN ESPECIAL</span>
             </div>
           </div>
         </div>

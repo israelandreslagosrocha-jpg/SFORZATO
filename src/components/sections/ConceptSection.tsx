@@ -20,8 +20,8 @@ export const ConceptSection: React.FC = () => {
         />
 
         {/* Bloque Narrativo Editorial en Tarjeta de Cristal Blanco */}
-        <div className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col gap-8 shadow-md">
-          <div className="flex flex-col gap-6 text-slate-800 font-light leading-relaxed text-lg sm:text-xl md:text-2xl">
+        <div className="glass-card rounded-3xl p-8 sm:p-12 flex flex-col gap-8 shadow-md border-black/10">
+          <div className="flex flex-col gap-6 text-slate-900 font-light leading-relaxed text-lg sm:text-xl md:text-2xl">
             {history.bodyParagraphs.map((paragraph, index) => (
               <p key={index} className="font-serif-editorial leading-relaxed text-slate-900">
                 {paragraph}
@@ -30,24 +30,24 @@ export const ConceptSection: React.FC = () => {
           </div>
 
           {/* Tarjeta de Reconocimiento y Homenaje */}
-          <div className="pt-8 border-t border-black/5 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="pt-8 border-t border-black/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--color-accent-gold)]/20 to-white border border-[var(--color-accent-gold)]/40 flex items-center justify-center text-[var(--color-accent-gold)] font-serif-editorial text-2xl font-bold shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 border-2 border-[var(--color-accent-gold)]/50 flex items-center justify-center text-[var(--color-accent-gold)] font-serif-editorial text-2xl font-bold shadow-xs">
                 NL
               </div>
               <div className="flex flex-col">
                 <span className="font-serif-editorial text-2xl font-normal text-slate-900">
                   {brandConfig.homage.personName}
                 </span>
-                <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-accent-gold)] font-semibold">
+                <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-accent-gold)] font-bold">
                   {brandConfig.homage.role}
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-col sm:items-end text-xs uppercase tracking-widest text-slate-600 font-mono">
+            <div className="flex flex-col sm:items-end text-xs uppercase tracking-widest text-slate-700 font-mono font-medium">
               <span>LEGADO HISTÓRICO</span>
-              <span className="text-slate-800 font-medium mt-0.5">{brandConfig.homage.departureDate}</span>
+              <span className="text-slate-900 font-bold mt-0.5">{brandConfig.homage.departureDate}</span>
             </div>
           </div>
         </div>

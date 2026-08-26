@@ -42,7 +42,7 @@ export const CaptureSection: React.FC = () => {
           align="center"
         />
 
-        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-xl border-[var(--color-accent-gold)]/35 bg-white/95">
+        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-xl border-[var(--color-accent-gold)]/40 bg-white">
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
             <div className="relative flex-1">
               <input
@@ -53,7 +53,7 @@ export const CaptureSection: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 aria-label="Correo electrónico para notificaciones de lanzamiento"
-                className="w-full px-5 py-4 rounded-full bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--color-accent-gold)] focus:ring-2 focus:ring-[var(--color-accent-gold)]/20 transition-all text-sm font-normal shadow-inner"
+                className="w-full px-5 py-4 rounded-full bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-[var(--color-accent-gold)] focus:ring-2 focus:ring-[var(--color-accent-gold)]/30 transition-all text-sm font-medium shadow-inner"
               />
             </div>
             <Button type="submit" variant="primary" size="lg" className="whitespace-nowrap">
@@ -62,12 +62,12 @@ export const CaptureSection: React.FC = () => {
           </form>
 
           {statusMessage && (
-            <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-4 font-mono font-semibold">
+            <p role="status" className="text-xs tracking-wider text-[var(--color-accent-gold)] mt-4 font-mono font-bold">
               {statusMessage}
             </p>
           )}
 
-          <p className="text-[11px] text-slate-500 uppercase tracking-widest mt-6 font-mono">
+          <p className="text-[11px] text-slate-600 uppercase tracking-widest mt-6 font-mono font-medium">
             Te notificaremos exclusivamente cuando el álbum y documental estén disponibles.
           </p>
         </div>
