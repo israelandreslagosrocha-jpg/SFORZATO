@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
-const basePath =
-  process.env.NEXT_PUBLIC_BASE_PATH ||
-  (process.env.GITHUB_ACTIONS ? "/SFORZATO" : "");
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   output: "export",

@@ -1,8 +1,6 @@
 import { BrandConfig } from '@/types';
 
-const basePath =
-  process.env.NEXT_PUBLIC_BASE_PATH ||
-  (process.env.GITHUB_ACTIONS ? '/SFORZATO' : '');
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export const brandConfig: BrandConfig = {
   name: 'Sforzato Music',
