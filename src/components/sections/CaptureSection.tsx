@@ -42,7 +42,7 @@ export const CaptureSection: React.FC = () => {
           align="center"
         />
 
-        <div className="w-full glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border-2 border-[#8C5E0A]/35 bg-white">
+        <div className="w-full glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl border-2 border-[#8C5E0A]/35 bg-white">
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3.5 w-full">
             <div className="relative flex-1">
               <input
@@ -53,10 +53,10 @@ export const CaptureSection: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 aria-label="Correo electrónico para notificaciones de lanzamiento"
-                className="w-full px-5 py-4 rounded-full bg-slate-50 border-2 border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-[#8C5E0A] focus:ring-2 focus:ring-[#8C5E0A]/30 transition-all text-sm font-medium shadow-inner"
+                className="w-full px-5 py-3.5 sm:py-4 rounded-full bg-slate-50 border-2 border-slate-300 text-slate-900 placeholder-slate-500 focus:outline-none focus:border-[#8C5E0A] focus:ring-2 focus:ring-[#8C5E0A]/30 transition-all text-sm font-medium shadow-inner"
               />
             </div>
-            <Button type="submit" variant="primary" size="lg" className="whitespace-nowrap">
+            <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
               Notificarme el lanzamiento
             </Button>
           </form>

@@ -25,7 +25,7 @@ export const contentConfig: ContentConfig = {
     production: 'Sforzato Music',
     recording: 'Grabado en varios estudios',
     mixing: 'Sforzato Music',
-    mastering: 'Los Ángeles, EE. UU.',
+    mastering: 'Masterización en Chile, México y EE. UU.',
     tracks: [], // Nombres de canciones no revelados (NO UTILIZAR)
     teaserMessage:
       'Próximamente conocerás a los artistas y músicos que forman parte de esta historia.',

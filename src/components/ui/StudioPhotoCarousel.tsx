@@ -86,7 +86,7 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
       role="region"
       aria-roledescription="carrusel"
       aria-label="Registro fotográfico de sesiones de grabación en estudio de En Tu Memoria"
-      className="glass-card rounded-3xl overflow-hidden shadow-2xl relative select-none"
+      className="glass-card rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl relative select-none"
       style={{
         border: '1px solid rgba(140, 94, 10, 0.35)',
         boxShadow: '0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04)',
@@ -96,11 +96,11 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Contenedor principal de imagen con relación de aspecto panorámica 16:9 */}
+      {/* Contenedor principal de imagen: 100% despejado y nítido */}
       <div
-        className="relative aspect-video w-full overflow-hidden"
+        className="relative aspect-[4/3] sm:aspect-[16/10] md:aspect-video w-full overflow-hidden"
         style={{
-          maxHeight: '540px',
+          maxHeight: '520px',
           backgroundColor: '#070C16',
         }}
       >
@@ -124,187 +124,170 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
           />
         </div>
 
-        {/* Degradado cinematográfico inferior para máxima legibilidad de textos */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'linear-gradient(to top, rgba(7, 12, 22, 0.95) 0%, rgba(7, 12, 22, 0.45) 45%, rgba(7, 12, 22, 0.15) 100%)',
-          }}
-        />
-
-        {/* Barra superior: Badge de categoría y contador de fotos */}
-        <div
-          className="absolute top-0 left-0 right-0 p-4 sm:p-7 flex items-center justify-between pointer-events-none"
-          style={{ zIndex: 30 }}
-        >
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full pointer-events-auto shadow-sm"
-            style={{
-              backgroundColor: 'rgba(7, 12, 22, 0.85)',
-              border: '1px solid rgba(245, 215, 127, 0.50)',
-              backdropFilter: 'blur(8px)',
-            }}
-          >
-            <span
-              className="w-2 h-2 rounded-full animate-ping"
-              style={{ backgroundColor: '#F5D77F' }}
-            />
-            <span
-              className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-mono font-bold"
-              style={{ color: '#F5D77F', textShadow: '0 1px 3px rgba(0,0,0,0.9)' }}
-            >
-              {currentItem.tag}
-            </span>
-          </div>
-
-          <div
-            className="font-mono text-xs sm:text-sm tracking-widest px-3.5 py-1.5 rounded-full font-bold pointer-events-auto shadow-sm"
-            style={{
-              backgroundColor: 'rgba(7, 12, 22, 0.85)',
-              color: '#FFFFFF',
-              border: '1px solid rgba(255, 255, 255, 0.35)',
-              backdropFilter: 'blur(8px)',
-            }}
-          >
-            {String(currentIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-          </div>
-        </div>
-
-        {/* Flecha Lateral Izquierda (Anterior) */}
+        {/* Flecha Lateral Izquierda flotante (sólo en md y desktop para no obstaculizar la vista en móvil) */}
         <button
           type="button"
           onClick={handlePrev}
           onMouseEnter={() => setIsHoverPrev(true)}
           onMouseLeave={() => setIsHoverPrev(false)}
           aria-label="Ver fotografía anterior de la sesión"
+          className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center cursor-pointer outline-none transition-all"
           style={{
-            position: 'absolute',
-            left: '16px',
-            top: '50%',
             transform: `translateY(-50%) ${isHoverPrev ? 'scale(1.08)' : 'scale(1)'}`,
-            zIndex: 40,
-            width: '48px',
-            height: '48px',
-            borderRadius: '9999px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             backgroundColor: isHoverPrev ? '#8C5E0A' : 'rgba(7, 12, 22, 0.82)',
             border: isHoverPrev ? '2px solid #F5D77F' : '1.5px solid rgba(245, 215, 127, 0.65)',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
-            cursor: 'pointer',
-            transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-            outline: 'none',
           }}
         >
           <svg
-            width="24"
-            height="24"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             stroke={isHoverPrev ? '#FFFFFF' : '#F5D77F'}
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            style={{
-              transform: isHoverPrev ? 'translateX(-1px)' : 'none',
-              transition: 'transform 0.2s ease',
-            }}
           >
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
 
-        {/* Flecha Lateral Derecha (Siguiente) */}
+        {/* Flecha Lateral Derecha flotante (sólo en md y desktop) */}
         <button
           type="button"
           onClick={handleNext}
           onMouseEnter={() => setIsHoverNext(true)}
           onMouseLeave={() => setIsHoverNext(false)}
           aria-label="Ver fotografía siguiente de la sesión"
+          className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center cursor-pointer outline-none transition-all"
           style={{
-            position: 'absolute',
-            right: '16px',
-            top: '50%',
             transform: `translateY(-50%) ${isHoverNext ? 'scale(1.08)' : 'scale(1)'}`,
-            zIndex: 40,
-            width: '48px',
-            height: '48px',
-            borderRadius: '9999px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             backgroundColor: isHoverNext ? '#8C5E0A' : 'rgba(7, 12, 22, 0.82)',
             border: isHoverNext ? '2px solid #F5D77F' : '1.5px solid rgba(245, 215, 127, 0.65)',
             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
-            cursor: 'pointer',
-            transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-            outline: 'none',
           }}
         >
           <svg
-            width="24"
-            height="24"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             stroke={isHoverNext ? '#FFFFFF' : '#F5D77F'}
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            style={{
-              transform: isHoverNext ? 'translateX(1px)' : 'none',
-              transition: 'transform 0.2s ease',
-            }}
           >
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </button>
 
-        {/* Pie de foto y leyenda descriptiva de la toma */}
+        {/* Indicador minimalista en esquina superior (no tapa detalles) */}
         <div
-          className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 flex flex-col gap-1.5 pointer-events-none"
-          style={{ zIndex: 25 }}
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-mono font-bold tracking-wider pointer-events-none"
+          style={{
+            backgroundColor: 'rgba(7, 12, 22, 0.75)',
+            color: '#FFFFFF',
+            border: '1px solid rgba(255, 255, 255, 0.25)',
+            backdropFilter: 'blur(6px)',
+          }}
         >
-          <h4
-            className="font-serif-editorial text-lg sm:text-2xl font-normal leading-tight max-w-2xl"
-            style={{
-              color: '#FFFFFF',
-              textShadow: '0 2px 12px rgba(0, 0, 0, 0.95)',
-            }}
-          >
-            {currentItem.title}
-          </h4>
-          <p
-            className="text-xs sm:text-sm font-normal leading-relaxed max-w-xl"
-            style={{
-              color: '#E2E8F0',
-              textShadow: '0 1px 6px rgba(0, 0, 0, 0.9)',
-            }}
-          >
-            {currentItem.caption}
-          </p>
+          {String(currentIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
         </div>
       </div>
 
-      {/* Barra de controles inferior: Indicadores de puntos y navegación directa */}
+      {/* Placa editorial inferior dedicada: Título, etiqueta y descripción técnica */}
       <div
-        className="py-3.5 px-4 sm:px-6 flex items-center justify-between gap-3"
+        className="p-4 sm:p-6 md:p-7 flex flex-col gap-2 sm:gap-2.5"
         style={{
           backgroundColor: '#070C16',
           borderTop: '1px solid rgba(245, 215, 127, 0.25)',
         }}
       >
-        <span
-          className="text-[10px] uppercase font-mono tracking-widest font-bold hidden sm:inline"
-          style={{ color: '#F5D77F' }}
+        <div className="flex items-center justify-between gap-3">
+          {/* Badge de categoría de sesión */}
+          <div
+            className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full"
+            style={{
+              backgroundColor: 'rgba(14, 23, 38, 0.9)',
+              border: '1px solid rgba(245, 215, 127, 0.45)',
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse"
+              style={{ backgroundColor: '#F5D77F' }}
+            />
+            <span
+              className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] font-mono font-bold"
+              style={{ color: '#F5D77F' }}
+            >
+              {currentItem.tag}
+            </span>
+          </div>
+
+          <span
+            className="text-[10px] uppercase font-mono tracking-widest font-semibold text-slate-400"
+            style={{ color: '#94A3B8' }}
+          >
+            TOMA {currentIndex + 1} DE {total}
+          </span>
+        </div>
+
+        {/* Título de la toma */}
+        <h4
+          className="font-serif-editorial text-lg sm:text-2xl font-normal leading-tight text-white"
+          style={{ color: '#FFFFFF' }}
         >
-          REGISTRO REAL EN ESTUDIO
-        </span>
+          {currentItem.title}
+        </h4>
+
+        {/* Leyenda y detalles de producción */}
+        <p
+          className="text-xs sm:text-sm font-normal leading-relaxed text-slate-300"
+          style={{ color: '#CBD5E1' }}
+        >
+          {currentItem.caption}
+        </p>
+      </div>
+
+      {/* Barra de navegación inferior: Flechas ergonómicas táctiles + Dots de selección */}
+      <div
+        className="py-3 px-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-4"
+        style={{
+          backgroundColor: '#040811',
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        }}
+      >
+        {/* Botón Anterior ergonómico */}
+        <button
+          type="button"
+          onClick={handlePrev}
+          aria-label="Fotografía anterior"
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider cursor-pointer active:scale-95 transition-all outline-none"
+          style={{
+            backgroundColor: 'rgba(14, 23, 38, 0.95)',
+            color: '#F5D77F',
+            border: '1px solid rgba(245, 215, 127, 0.45)',
+          }}
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          <span className="hidden sm:inline">ANTERIOR</span>
+        </button>
 
         {/* Puntos de navegación directa (10 tomas) */}
         <div
-          className="flex items-center justify-center gap-2 mx-auto sm:mx-0 flex-1 sm:flex-initial"
+          className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap mx-auto"
           role="tablist"
           aria-label="Fotografías del carrusel"
         >
@@ -319,11 +302,11 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
                 aria-label={`Ir a fotografía ${idx + 1}: ${item.title}`}
                 onClick={() => handleSelect(idx)}
                 style={{
-                  width: isActive ? '28px' : '8px',
-                  height: '8px',
+                  width: isActive ? '22px' : '6px',
+                  height: '6px',
                   borderRadius: '9999px',
-                  backgroundColor: isActive ? '#F5D77F' : 'rgba(255, 255, 255, 0.35)',
-                  boxShadow: isActive ? '0 0 10px rgba(245, 215, 127, 0.7)' : 'none',
+                  backgroundColor: isActive ? '#F5D77F' : 'rgba(255, 255, 255, 0.30)',
+                  boxShadow: isActive ? '0 0 8px rgba(245, 215, 127, 0.6)' : 'none',
                   border: 'none',
                   padding: 0,
                   margin: 0,
@@ -336,12 +319,32 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
           })}
         </div>
 
-        <span
-          className="text-[10px] uppercase font-mono tracking-widest font-bold hidden sm:inline"
-          style={{ color: '#E2E8F0' }}
+        {/* Botón Siguiente ergonómico */}
+        <button
+          type="button"
+          onClick={handleNext}
+          aria-label="Fotografía siguiente"
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider cursor-pointer active:scale-95 transition-all outline-none"
+          style={{
+            backgroundColor: 'rgba(14, 23, 38, 0.95)',
+            color: '#F5D77F',
+            border: '1px solid rgba(245, 215, 127, 0.45)',
+          }}
         >
-          {currentIndex + 1} DE {total}
-        </span>
+          <span className="hidden sm:inline">SIGUIENTE</span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
     </div>
   );
