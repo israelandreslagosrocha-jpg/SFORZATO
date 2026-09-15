@@ -12,8 +12,6 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
   // El carrusel inicia SIEMPRE en el índice 0 (la toma de la batería acústica en vivo)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isHoverPrev, setIsHoverPrev] = useState(false);
-  const [isHoverNext, setIsHoverNext] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
@@ -122,77 +120,6 @@ export const StudioPhotoCarousel: React.FC<StudioPhotoCarouselProps> = ({ items 
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1024px, 1200px"
             className="w-full h-full object-cover object-center"
           />
-        </div>
-
-        {/* Flecha Lateral Izquierda flotante (sólo en md y desktop para no obstaculizar la vista en móvil) */}
-        <button
-          type="button"
-          onClick={handlePrev}
-          onMouseEnter={() => setIsHoverPrev(true)}
-          onMouseLeave={() => setIsHoverPrev(false)}
-          aria-label="Ver fotografía anterior de la sesión"
-          className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center cursor-pointer outline-none transition-all"
-          style={{
-            transform: `translateY(-50%) ${isHoverPrev ? 'scale(1.08)' : 'scale(1)'}`,
-            backgroundColor: isHoverPrev ? '#8C5E0A' : 'rgba(7, 12, 22, 0.82)',
-            border: isHoverPrev ? '2px solid #F5D77F' : '1.5px solid rgba(245, 215, 127, 0.65)',
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
-          }}
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={isHoverPrev ? '#FFFFFF' : '#F5D77F'}
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-
-        {/* Flecha Lateral Derecha flotante (sólo en md y desktop) */}
-        <button
-          type="button"
-          onClick={handleNext}
-          onMouseEnter={() => setIsHoverNext(true)}
-          onMouseLeave={() => setIsHoverNext(false)}
-          aria-label="Ver fotografía siguiente de la sesión"
-          className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full items-center justify-center cursor-pointer outline-none transition-all"
-          style={{
-            transform: `translateY(-50%) ${isHoverNext ? 'scale(1.08)' : 'scale(1)'}`,
-            backgroundColor: isHoverNext ? '#8C5E0A' : 'rgba(7, 12, 22, 0.82)',
-            border: isHoverNext ? '2px solid #F5D77F' : '1.5px solid rgba(245, 215, 127, 0.65)',
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
-          }}
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={isHoverNext ? '#FFFFFF' : '#F5D77F'}
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-
-        {/* Indicador minimalista en esquina superior (no tapa detalles) */}
-        <div
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-mono font-bold tracking-wider pointer-events-none"
-          style={{
-            backgroundColor: 'rgba(7, 12, 22, 0.75)',
-            color: '#FFFFFF',
-            border: '1px solid rgba(255, 255, 255, 0.25)',
-            backdropFilter: 'blur(6px)',
-          }}
-        >
-          {String(currentIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
         </div>
       </div>
 
