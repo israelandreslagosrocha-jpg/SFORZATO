@@ -81,6 +81,8 @@ a {
 .text-slate-700 { color: #334155; }
 .text-slate-600 { color: #475569; }
 .text-slate-500 { color: #64748B; }
+.text-slate-300 { color: #CBD5E1; }
+.text-slate-300\/90 { color: rgba(203, 213, 225, 0.90); }
 
 .text-\[var\(--color-accent-gold\)\] { color: var(--color-accent-gold); }
 .text-\[var\(--color-text-muted\)\] { color: var(--color-text-muted); }
@@ -207,6 +209,12 @@ a {
 
 .aspect-square { aspect-ratio: 1 / 1; }
 .aspect-\[4\/5\] { aspect-ratio: 4 / 5; }
+.aspect-video { aspect-ratio: 16 / 9; }
+.aspect-\[16\/9\] { aspect-ratio: 16 / 9; }
+.aspect-\[16\/10\] { aspect-ratio: 16 / 10; }
+.max-h-\[500px\] { max-height: 500px; }
+.max-h-\[520px\] { max-height: 520px; }
+.object-center { object-position: center; }
 .overflow-hidden { overflow: hidden; }
 
 /* Padding & Margins */
@@ -321,12 +329,17 @@ a {
 
 .from-transparent { --tw-gradient-from: transparent; }
 .from-white { --tw-gradient-from: #FFFFFF; }
+.from-black\/90 { --tw-gradient-from: rgba(0, 0, 0, 0.90); }
+.from-black\/85 { --tw-gradient-from: rgba(0, 0, 0, 0.85); }
+.from-black\/80 { --tw-gradient-from: rgba(0, 0, 0, 0.80); }
 .from-\[var\(--color-accent-gold\)\]\/20 { --tw-gradient-from: rgba(140, 94, 10, 0.20); }
 .from-\[var\(--color-accent-gold\)\]\/30 { --tw-gradient-from: rgba(140, 94, 10, 0.30); }
 
 .via-\[var\(--color-accent-gold\)\] { --tw-gradient-via: var(--color-accent-gold); }
 .via-transparent { --tw-gradient-via: transparent; }
 .via-white\/80 { --tw-gradient-via: rgba(255, 255, 255, 0.85); }
+.via-black\/30 { --tw-gradient-via: rgba(0, 0, 0, 0.30); }
+.via-black\/20 { --tw-gradient-via: rgba(0, 0, 0, 0.20); }
 
 .to-transparent { --tw-gradient-to: transparent; }
 .to-white { --tw-gradient-to: #FFFFFF; }
@@ -387,6 +400,7 @@ input:focus { outline: none; }
   .sm\:inline { display: inline; }
   .sm\:flex-row { flex-direction: row; }
   .sm\:w-auto { width: auto; }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sm\:p-6 { padding: 1.5rem; }
   .sm\:p-8 { padding: 2rem; }

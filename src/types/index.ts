@@ -48,6 +48,38 @@ export interface BrandConfig {
     role: string;
     status: ContentStatus;
   };
+  studioAssets: StudioAssetsConfig;
+}
+
+export interface StudioImageAsset {
+  path: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption: string;
+  tag: string;
+  role: 'primary' | 'secondary';
+  status: ContentStatus;
+}
+
+export interface StudioPhotoItem {
+  id: string;
+  path: string;
+  alt: string;
+  width: number;
+  height: number;
+  tag: string;
+  title: string;
+  caption: string;
+  role: 'primary' | 'secondary' | 'documentary';
+  status: ContentStatus;
+}
+
+export interface StudioAssetsConfig {
+  primary: StudioImageAsset;
+  secondaryConsole: StudioImageAsset;
+  secondaryGuitar: StudioImageAsset;
+  allCaptures: StudioPhotoItem[];
 }
 
 export interface NavItem {
